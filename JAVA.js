@@ -35,25 +35,19 @@ console.log(controllo(35,60));
 
 
 //QUARTO ESERCIZIO
-// function check(city) {
-    //if (city.startsWith("Los") || city.startsWith("New")) {
-        //return city;
-    //}
-    //return false;
-//}
-// Esempi di utilizzo
-//console.log(check("Los Angeles")); // "Los Angeles"
+function NomeCittà(città) {
+    if(città.startsWith("Los") || città.startsWith("New")) {
+        return città;
+    } else {
+        return false;
+    }
+}
+
+console.log(NomeCittà("San Marino"))
 
 
 
 //QUINTO ESERCIZIO
-//function sum(numbers) {
-   // return numbers.reduce((sum, num) => sum + num, 0);
-//}
-
-// Esempi di utilizzo
-//console.log(sum([1, 2, 3, 4, 5]));  // 15
-//console.log(sum([]));   // 0 (array vuoto)
 
 
 
@@ -91,16 +85,27 @@ console.log(angoli(73));
 
 //OTTAVO ESERCIZO
 const FunzioneFrase = "Che importanza avete ora";
-const FunzioneAcronimo = acronimo(FunzioneFrase);
 
-function acronimo(frase) {
-    return frase
-        .split("")          
-        .map(parola => parola[0])     
-        .join("")                 
-        .toUpperCase();          
+let frase = "Che Importanza Avete Ora"
+function acronimo(str) {
+    const parole = str.split("")
+    const PrimaLettera = []
+    parole.forEach((parola) => {
+            if(parola.length > 0) {
+                parola.toUpperCase()
+                PrimaLettera.push(parola[0])
+            }
+    })
+    const esercizio = PrimaLettera.join("")
+
+    return esercizio
 }
-console.log(FunzioneAcronimo); //Ciao
+
+console.log(acronimo(frase))
+
+
+
+
 
 
 
